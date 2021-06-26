@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![Dalinkw3nt](https://circleci.com/gh/Dalinkw3nt/ML-microservices.svg?style=svg)](https://app.circleci.com/pipelines/github/Dalinkw3nt/ML-microservices)
 
 ## Project Overview
 
