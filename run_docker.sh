@@ -12,4 +12,4 @@ docker image ls
 
 # Step 3: 
 # Run flask app
-docker run -it --rm --name microservices -p 8000:80 microservices
+docker run -it --rm --name microservices -p 8800:80 microservices

@@ -1,12 +1,17 @@
 <paste log output from Kubernetes-mediated prediction, here>
 
-(.devops) cmusonda@Chisamas-MacBook-Pro project-ml-microservice-kubernetes % ./run_kubernetes.sh                                                   
+(.devops) cmusonda@Chisamas-MacBook-Pro ML-microservices % ./run_kubernetes.sh                                  
+Authenticating with existing credentials...
+Login Succeeded
 Error from server (AlreadyExists): pods "microservice" already exists
 NAME           READY   STATUS    RESTARTS   AGE
-microservice   1/1     Running   0          11m
-Unable to listen on port 8000: Listeners failed to create with the following errors: [unable to create listener: Error listen tcp4 127.0.0.1:8000: bind: address already in use unable to create listener: Error listen tcp6 [::1]:8000: bind: address already in use]
-error: unable to listen on any of the requested ports: [{8000 80}]
- * Serving Flask app "app" (lazy loading)
+microservice   1/1     Running   1          53m
+Forwarding from 127.0.0.1:8800 -> 80
+Forwarding from [::1]:8800 -> 80
+Handling connection for 8800
+Handling connection for 8800
+Handling connection for 8800
+^C * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
@@ -17,9 +22,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 /usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   from ._gradient_boosting import predict_stages
- * Running on all addresses.
-   WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://172.17.0.3:80/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
  * Restarting with stat
 /usr/local/lib/python3.7/site-packages/sklearn/ensemble/gradient_boosting.py:34: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
@@ -28,41 +31,35 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
   from ._gradient_boosting import predict_stages
  * Debugger is active!
- * Debugger PIN: 108-066-670
-[2021-06-26 07:55:16,043] INFO in app: JSON payload: 
+ * Debugger PIN: 264-859-212
+[2021-06-26 13:30:42,657] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-06-26 07:55:16,053] INFO in app: Inference payload DataFrame: 
+[2021-06-26 13:30:42,686] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-06-26 07:55:16,056] INFO in app: Scaling Payload: 
+[2021-06-26 13:30:42,689] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-127.0.0.1 - - [26/Jun/2021 07:55:16] "POST /predict HTTP/1.1" 200 -
-[2021-06-26 07:55:52,485] INFO in app: JSON payload: 
+[2021-06-26 13:30:42,693] INFO in app: Prediction output: [20.35373177134412]
+127.0.0.1 - - [26/Jun/2021 13:30:42] "POST /predict HTTP/1.1" 200 -
+[2021-06-26 13:31:56,092] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-06-26 07:55:52,491] INFO in app: Inference payload DataFrame: 
+[2021-06-26 13:31:56,096] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-06-26 07:55:52,495] INFO in app: Scaling Payload: 
+[2021-06-26 13:31:56,100] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-127.0.0.1 - - [26/Jun/2021 07:55:52] "POST /predict HTTP/1.1" 200 -
-[2021-06-26 07:57:32,959] INFO in app: JSON payload: 
+[2021-06-26 13:31:56,101] INFO in app: Prediction output: [20.35373177134412]
+127.0.0.1 - - [26/Jun/2021 13:31:56] "POST /predict HTTP/1.1" 200 -
+[2021-06-26 13:32:44,339] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-06-26 07:57:32,967] INFO in app: Inference payload DataFrame: 
+[2021-06-26 13:32:44,345] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-06-26 07:57:32,971] INFO in app: Scaling Payload: 
+[2021-06-26 13:32:44,348] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-127.0.0.1 - - [26/Jun/2021 07:57:32] "POST /predict HTTP/1.1" 200 -
-[2021-06-26 07:57:43,965] INFO in app: JSON payload: 
-{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-06-26 07:57:43,969] INFO in app: Inference payload DataFrame: 
-   CHAS     RM    TAX  PTRATIO      B  LSTAT
-0     0  6.575  296.0     15.3  396.9   4.98
-[2021-06-26 07:57:43,973] INFO in app: Scaling Payload: 
-   CHAS     RM    TAX  PTRATIO      B  LSTAT
-0     0  6.575  296.0     15.3  396.9   4.98
-127.0.0.1 - - [26/Jun/2021 07:57:43] "POST /predict HTTP/1.1" 200 -
-(.devops) cmusonda@Chisamas-MacBook-Pro project-ml-microservice-kubernetes % 
+[2021-06-26 13:32:44,349] INFO in app: Prediction output: [20.35373177134412]
+127.0.0.1 - - [26/Jun/2021 13:32:44] "POST /predict HTTP/1.1" 200 -
+(.devops) cmusonda@Chisamas-MacBook-Pro ML-microservices % 

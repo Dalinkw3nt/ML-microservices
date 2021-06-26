@@ -7,8 +7,10 @@
 # dockerpath='chasetheblack/microservices'
 dockerpath='chasetheblack/microservices:latest'
 
+
 # Step 2
 # Run the Docker Hub container with kubernetes
+docker login
 kubectl run microservice --image=$dockerpath --port=80
 
 # Step 3:
@@ -18,7 +20,7 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward microservice 8000:80
+kubectl port-forward microservice 8800:80
 
 # Logging
 kubectl logs `kubectl get pods -o=name`
